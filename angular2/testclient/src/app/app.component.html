@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>
+  Transactions
+</h1>
+
+<table border="1">
+  <thead>
+    <th>Id</th>
+    <th>Type</th>
+    <th>Amount</th>
+    <th>Is locked?</th>
+    <th>Actions</th>
+  </thead>
+  <tr *ngFor="let txn of txns">
+    <td>{{txn.id}}</td>
+    <td>{{txn.type}}</td>
+    <td>{{txn.amount}}</td>
+    <td>{{txn.locked}}</td>
+    <td>
+      <button (click)="acquireLock(txn.id)">Lock</button>
+      <button (click)="releaseLock(txn.id)">Unlock</button>
+      <button (click)="repaired(txn.id)">Mark as repaired</button>
+    </td>
+  </tr>
+</table>
+
